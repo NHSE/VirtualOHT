@@ -1,0 +1,405 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\interfaces\\icommmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:interfaces\\icommmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\services\\communicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:services\\communicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\pages\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\pages\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\models\\piosignalitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:models\\piosignalitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\enumlist\\piosignalenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:enumlist\\piosignalenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\models\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:models\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\services\\applicationhostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:services\\applicationhostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\36175\\AppData\\Local\\Temp\\.vsdbgsrc\\f73b8cbf98538d7fc90bab4fbf9817c887bb40a2b07e65bd07e1a83ed7804334\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\models\\wafer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:models\\wafer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\interfaces\\ilogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:interfaces\\ilogmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\viewmodels\\windows\\carriersetupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:viewmodels\\windows\\carriersetupviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\virtualoht.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:virtualoht.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\windows\\carriersetupwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\windows\\carriersetupwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\helpers\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:helpers\\enumtobooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|c:\\users\\36175\\onedrive\\\uBB38\uC11C\\c#_test\\test\\virtualoht\\views\\windows\\carriersetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1C81B999-6659-405B-AF99-1824E2DA5F53}|VirtualOHT.csproj|solutionrelative:views\\windows\\carriersetupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Pages\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Pages\\DashboardViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\DashboardViewModel.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAADwv0oAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:36:43.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashboardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Pages\\DashboardPage.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\DashboardPage.xaml",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Pages\\DashboardPage.xaml",
+              "RelativeToolTip": "Views\\Pages\\DashboardPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-25T06:21:43.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAWwDIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T09:00:49.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashboardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Pages\\DashboardPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Pages\\DashboardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Pages\\DashboardPage.xaml.cs",
+              "RelativeToolTip": "Views\\Pages\\DashboardPage.xaml.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAWwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:34:07.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Windows\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Windows\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:45:35.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CommunicationService.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\CommunicationService.cs",
+              "RelativeDocumentMoniker": "Services\\CommunicationService.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\CommunicationService.cs",
+              "RelativeToolTip": "Services\\CommunicationService.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAUwE8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T08:34:24.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICommManager.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Interfaces\\ICommManager.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ICommManager.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Interfaces\\ICommManager.cs",
+              "RelativeToolTip": "Interfaces\\ICommManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T08:55:21.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PIOSignalEnum.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\EnumList\\PIOSignalEnum.cs",
+              "RelativeDocumentMoniker": "EnumList\\PIOSignalEnum.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\EnumList\\PIOSignalEnum.cs",
+              "RelativeToolTip": "EnumList\\PIOSignalEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T08:44:56.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PioSignalItem.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\PioSignalItem.cs",
+              "RelativeDocumentMoniker": "Models\\PioSignalItem.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\PioSignalItem.cs",
+              "RelativeToolTip": "Models\\PioSignalItem.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T08:54:10.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:45:26.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\AppConfig.cs",
+              "RelativeDocumentMoniker": "Models\\AppConfig.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\AppConfig.cs",
+              "RelativeToolTip": "Models\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:05:36.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationHostService.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\ApplicationHostService.cs",
+              "RelativeDocumentMoniker": "Services\\ApplicationHostService.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\ApplicationHostService.cs",
+              "RelativeToolTip": "Services\\ApplicationHostService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T09:01:25.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LogService.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\LogService.cs",
+              "RelativeDocumentMoniker": "Services\\LogService.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Services\\LogService.cs",
+              "RelativeToolTip": "Services\\LogService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAUwHIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T07:43:24.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ILogManager.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Interfaces\\ILogManager.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ILogManager.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Interfaces\\ILogManager.cs",
+              "RelativeToolTip": "Interfaces\\ILogManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T07:43:46.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\AppData\\Local\\Temp\\.vsdbgsrc\\f73b8cbf98538d7fc90bab4fbf9817c887bb40a2b07e65bd07e1a83ed7804334\\XamlReader.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\f73b8cbf98538d7fc90bab4fbf9817c887bb40a2b07e65bd07e1a83ed7804334\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\36175\\AppData\\Local\\Temp\\.vsdbgsrc\\f73b8cbf98538d7fc90bab4fbf9817c887bb40a2b07e65bd07e1a83ed7804334\\XamlReader.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\f73b8cbf98538d7fc90bab4fbf9817c887bb40a2b07e65bd07e1a83ed7804334\\XamlReader.cs [\uC77D\uAE30 \uC804\uC6A9]",
+              "ViewState": "AgIAANIBAAAAAAAAAAAEwOwBAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T08:58:07.264Z",
+              "EditorCaption": " [\uC77D\uAE30 \uC804\uC6A9]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Wafer.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\Wafer.cs",
+              "RelativeDocumentMoniker": "Models\\Wafer.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Models\\Wafer.cs",
+              "RelativeToolTip": "Models\\Wafer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAArwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:38:50.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CarrierSetupViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Windows\\CarrierSetupViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Windows\\CarrierSetupViewModel.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\ViewModels\\Windows\\CarrierSetupViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Windows\\CarrierSetupViewModel.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAADwvwwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:35:56.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "VirtualOHT",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\VirtualOHT.csproj",
+              "RelativeDocumentMoniker": "VirtualOHT.csproj",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\VirtualOHT.csproj",
+              "RelativeToolTip": "VirtualOHT.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-29T07:55:47.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CarrierSetupWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\CarrierSetupWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Windows\\CarrierSetupWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\CarrierSetupWindow.xaml.cs",
+              "RelativeToolTip": "Views\\Windows\\CarrierSetupWindow.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwCkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T06:35:11.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EnumToBooleanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Helpers\\EnumToBooleanConverter.cs",
+              "RelativeDocumentMoniker": "Helpers\\EnumToBooleanConverter.cs",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Helpers\\EnumToBooleanConverter.cs",
+              "RelativeToolTip": "Helpers\\EnumToBooleanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T08:51:47.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\Windows\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-25T06:21:26.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CarrierSetupWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\CarrierSetupWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\Windows\\CarrierSetupWindow.xaml",
+              "ToolTip": "C:\\Users\\36175\\OneDrive\\\uBB38\uC11C\\C#_Test\\test\\VirtualOHT\\Views\\Windows\\CarrierSetupWindow.xaml",
+              "RelativeToolTip": "Views\\Windows\\CarrierSetupWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-25T06:34:44.303Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

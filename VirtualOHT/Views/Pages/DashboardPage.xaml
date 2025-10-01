@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="VirtualOHT.Views.Pages.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:VirtualOHT.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="DashboardPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT : Visualization -->
+        <Border Grid.Column="0"
+                CornerRadius="14"
+                Padding="16"
+                Background="#2B2B2B">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="4" Opacity="0.18"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel VerticalAlignment="Center">
+                    <Canvas x:Name="mainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" />
+                    <Image Source="/Resources/LoadPort.png" Stretch="Uniform" Margin="0 0 30 0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,16,30,0">
+                    <ui:Button x:Name="btnsetup"
+                               Content="Setup"
+                               Click="btnSetup_Click"
+                               IsEnabled="{Binding ViewModel.IsSetupEnabled}"
+                               Width="120" Height="40"
+                               Margin="0,0,12,0"/>
+                    <ui:Button x:Name="btncancel"
+                               Content="Cancel"
+                               Click="btnCancel_Click"
+                               Command="{Binding ViewModel.CancelCommand}"
+                               IsEnabled="{Binding ViewModel.IsCancelEnabled}"
+                               Width="120" Height="40"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- RIGHT : Log & Controls -->
+        <Border Grid.Column="1"
+                CornerRadius="14"
+                Padding="16"
+                Background="#2B2B2B"
+                Margin="16,0,0,0">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="4" Opacity="0.14"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- 통신 상태 + 로그 -->
+                    <RowDefinition Height="*"/>
+                    <!-- Load/Unload -->
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- 로그 + 통신 영역 -->
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,12">
+                        <ui:TextBlock Text="System Log"
+                                      FontSize="16"
+                                      FontWeight="SemiBold"
+                                      VerticalAlignment="Center"
+                                      Width="200"
+                                      Margin="0,0,16,0"/>
+
+                        <!-- 통신 상태 -->
+                        <!-- 연결 상태 Indicator -->
+                        <Ellipse x:Name="ConnectionIndicator"
+                             Width="15" Height="15"
+                             Margin="5"
+                             Fill="Gray"
+                             Stroke="Black"
+                             StrokeThickness="1"/>
+
+                        <!-- 버튼들 -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0,0,0">
+                            <ui:Button x:Name="btnConnect"
+                                       Content="Connect"
+                                       Command="{Binding ViewModel.ConnectCommand}"
+                                       Width="100" Height="32"
+                                       Margin="0,0,8,0"/>
+                            <ui:Button x:Name="btnDisconnect"
+                                       Content="Disconnect"
+                                       Command="{Binding ViewModel.DisconnectCommand}"
+                                       Width="100" Height="32"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Canvas x:Name="signalCanvas" Background="#1E1E1E" Height="200"/>
+
+                    <TextBox Height="230"
+                             VerticalScrollBarVisibility="Auto"
+                             IsReadOnly="True"
+                             TextWrapping="Wrap"
+                             HorizontalScrollBarVisibility="Auto"
+                             Focusable="False"
+                             Text="{Binding ViewModel.LogText}" 
+                             AcceptsReturn="True"/>
+                </StackPanel>
+
+                <!-- Load/Unload 버튼 -->
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <ui:Button x:Name="btnLoad"
+                               Content="Load"
+                               Command="{Binding ViewModel.LoadCommand}"
+                               IsEnabled="{Binding ViewModel.}"
+                               Width="120" Height="40"
+                               Margin="0,0,12,0"/>
+                    <ui:Button x:Name="btnUnLoad"
+                               Content="UnLoad"
+                               Command="{Binding ViewModel.UnLoadCommand}"
+                               IsEnabled="{Binding ViewModel.}"
+                               Width="120" Height="40"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
