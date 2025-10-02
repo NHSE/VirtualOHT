@@ -11,49 +11,43 @@ namespace VirtualOHT.Services
     /// </summary>
     public class ApplicationHostService : IHostedService
     {
+        #region FIELDS
         private readonly IServiceProvider _serviceProvider;
+        #endregion
 
-        private INavigationWindow _navigationWindow;
+        #region PROPERTIES
+        #endregion
 
+        #region CONSTRUCTOR
         public ApplicationHostService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
+        #endregion
 
-        /// <summary>
-        /// Triggered when the application host is ready to start the service.
-        /// </summary>
-        /// <param name="cancellationToken">Indicates that the start process has been aborted.</param>
+        #region COMMAND
+        #endregion
+
+        #region METHOD
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            await HandleActivationAsync();
-        }
-
-        /// <summary>
-        /// Triggered when the application host is performing a graceful shutdown.
-        /// </summary>
-        /// <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
-        public async Task StopAsync(CancellationToken cancellationToken)
-        {
-            await Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Creates main window during activation.
-        /// </summary>
-        private async Task HandleActivationAsync()
-        {
-            if (!Application.Current.Windows.OfType<MainWindow>().Any())
+            try
             {
-                _navigationWindow = (
-                    _serviceProvider.GetService(typeof(INavigationWindow)) as INavigationWindow
-                )!;
-                _navigationWindow!.ShowWindow();
-
-                _navigationWindow.Navigate(typeof(Views.Pages.DashboardPage));
+                var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+                Application.Current.MainWindow = mainWindow; // WPF의 MainWindow 속성도 설정
+                mainWindow.Show();
             }
-
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ApplicationHostService: 예외 발생: " + ex.ToString());
+                System.Windows.MessageBox.Show(ex.ToString(), "예외 발생");
+            }
             await Task.CompletedTask;
         }
+
+        public async Task StopAsync(CancellationToken cancellationToken)
+        => await Task.CompletedTask;
+        #endregion
+
     }
 }

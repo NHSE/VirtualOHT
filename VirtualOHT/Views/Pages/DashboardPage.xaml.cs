@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Reflection.Metadata;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -11,7 +12,7 @@ using Wpf.Ui.Abstractions.Controls;
 
 namespace VirtualOHT.Views.Pages
 {
-    public partial class DashboardPage : INavigableView<DashboardViewModel>
+    public partial class DashboardPage
     {
         public DashboardViewModel ViewModel { get; }
         private Dictionary<int, Line> _slotLines = new();
@@ -37,31 +38,52 @@ namespace VirtualOHT.Views.Pages
             ViewModel = viewModel;
             DataContext = this;
 
-            _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
+            InitializeComponent();
+
+            _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(10) };
             _timer.Tick += SignalTimer_Tick;
 
             ViewModel.PropertyChanged += async (s, e) =>
             {
                 if (e.PropertyName == nameof(ViewModel.IsRunning))
                 {
-                    if (!ViewModel.IsRunning)
+                    if (Application.Current.Dispatcher.CheckAccess())
                     {
-                        await Task.Delay(300);  // 0.3초 지연
-                        Application.Current.Dispatcher.Invoke(() => _timer.Stop());
-                    }
-                    else
-                    {
-                        await Application.Current.Dispatcher.InvokeAsync(() =>
+                        if (!ViewModel.IsRunning)
+                        {
+                            await Task.Delay(500);
+                            _timer.Stop();
+                            tblog.ScrollToEnd();
+                        }
+                        else
                         {
                             signalCanvas.Children.Clear();
                             ViewModel.Signals.Clear();
                             _timer.Start();
+                        }
+                    }
+                    else
+                    {
+                        await Application.Current.Dispatcher.BeginInvoke(async () =>
+                        {
+                            if (!ViewModel.IsRunning)
+                            {
+                                await Task.Delay(500);
+                                _timer.Stop();
+                                tblog.ScrollToEnd();
+                            }
+                            else
+                            {
+                                signalCanvas.Children.Clear();
+                                ViewModel.Signals.Clear();
+                                _timer.Start();
+                            }
                         });
                     }
                 }
                 else if (e.PropertyName == nameof(ViewModel.IsConnected))
                 {
-                    Application.Current.Dispatcher.Invoke(() =>
+                    if (Application.Current.Dispatcher.CheckAccess())
                     {
                         if (ConnectionIndicator.Fill is SolidColorBrush brush && brush.Color == Colors.Gray)
                         {
@@ -71,11 +93,23 @@ namespace VirtualOHT.Views.Pages
                         {
                             ConnectionIndicator.Fill = new SolidColorBrush(Colors.Gray);
                         }
-                    });
+                    }
+                    else
+                    {
+                        await Application.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            if (ConnectionIndicator.Fill is SolidColorBrush brush && brush.Color == Colors.Gray)
+                            {
+                                ConnectionIndicator.Fill = new SolidColorBrush(Colors.LightGreen);
+                            }
+                            else
+                            {
+                                ConnectionIndicator.Fill = new SolidColorBrush(Colors.Gray);
+                            }
+                        });
+                    }
                 }
             };
-
-            InitializeComponent();
         }
 
         private void btnSetup_Click(object sender, RoutedEventArgs e) // command로 빼기
@@ -108,7 +142,7 @@ namespace VirtualOHT.Views.Pages
             }
             else
             {
-                Application.Current.Dispatcher.Invoke(() =>
+                Application.Current.Dispatcher.BeginInvoke(() =>
                 {
                     DrawSignals();
                 });
@@ -126,17 +160,17 @@ namespace VirtualOHT.Views.Pages
             signalCanvas.Children.Clear();
 
             double width = signalCanvas.ActualWidth;
-            double heightPerSignal = signalCanvas.ActualHeight / 11;
+            double heightPerSignal = signalCanvas.ActualHeight / signalNames.Length;
             int count = ViewModel.Signals.Count;
             if (count == 0) return;
 
-            double leftMargin = 50; // 이름 표시 공간 확보
+            double leftMargin = 50;
             double xStep = (width - leftMargin) / count;
 
-            for (int s = 0; s < 11; s++)
+            for (int s = 0; s < signalNames.Length; s++)
             {
                 // 라인 구분선
-                var separator = new Line
+                signalCanvas.Children.Add(new Line
                 {
                     X1 = leftMargin,
                     X2 = width,
@@ -144,10 +178,9 @@ namespace VirtualOHT.Views.Pages
                     Y2 = s * heightPerSignal,
                     Stroke = Brushes.Gray,
                     StrokeThickness = 0.5
-                };
-                signalCanvas.Children.Add(separator);
+                });
 
-                // 라인 이름 표시
+                // 라인 이름
                 var text = new TextBlock
                 {
                     Text = signalNames[s],
@@ -155,11 +188,11 @@ namespace VirtualOHT.Views.Pages
                     FontSize = 12
                 };
                 Canvas.SetLeft(text, 0);
-                Canvas.SetTop(text, s * heightPerSignal + heightPerSignal / 4 - 6); // 중앙 정렬
+                Canvas.SetTop(text, s * heightPerSignal + heightPerSignal / 4 - 6);
                 signalCanvas.Children.Add(text);
 
                 // 신호 라인
-                Polyline line = new() { Stroke = signalColors[s], StrokeThickness = 2 };
+                var line = new Polyline { Stroke = signalColors[s], StrokeThickness = 2 };
                 bool prevVal = false;
                 double prevY = s * heightPerSignal + heightPerSignal * 3 / 4;
 
@@ -205,10 +238,10 @@ namespace VirtualOHT.Views.Pages
             mainCanvas.Children.Clear();
 
             // 선택된 슬롯에 따라 라인 추가
-            double TopY = 90;
-            double BottomY = 350;
-            double XStart = 50;
-            double XEnd = 270;
+            double TopY = 120;
+            double BottomY = 430;
+            double XStart = 70;
+            double XEnd = 340;
             int SlotCount = 25;
             double GapY = (BottomY - TopY) / (SlotCount - 1);
 
