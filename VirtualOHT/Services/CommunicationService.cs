@@ -51,6 +51,8 @@ namespace VirtualOHT.Services
                     _logManager.WriteLog("State", "TCP/IP Connected!!!");
                     ClientChange?.Invoke();
 
+                    Task.Run(() => SendConnectSignalAsync());
+
                     _cts = new CancellationTokenSource();
                     Task.Run(() => ReceiveLoop(_cts.Token));
                 }
@@ -93,6 +95,11 @@ namespace VirtualOHT.Services
             var data = new List<byte> { action };
             data.AddRange(signals);
             await _stream.WriteAsync(data.ToArray(), 0, data.Count);
+        }
+
+        public async Task SendConnectSignalAsync()
+        {
+            await _stream.WriteAsync(new byte[] {(byte)TransferAction.Connect}, 0, 1);
         }
 
         private async Task ReceiveLoop(CancellationToken token)
