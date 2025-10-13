@@ -19,11 +19,11 @@
 ## 🏗️ **Architecture**
 
 <p align="center">
-  <img width="1616" height="431" alt="architecture" src="https://github.com/user-attachments/assets/0c378287-20b2-42e4-99bf-8dfe264d7015" />
+  <img width="1567" height="898" alt="image" src="https://github.com/user-attachments/assets/57ac2d13-5e8f-439f-9158-ceb7abd55746" />
 </p>
 
-> **Master :** VirtualOHT  
-> **Slave :** SemiConductor-Equipment
+> **Client :** VirtualOHT  
+> **Server :** SemiConductor-Equipment
 
 ---
 
