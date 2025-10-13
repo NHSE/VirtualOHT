@@ -18,6 +18,7 @@ namespace VirtualOHT.Interfaces
         Task SendSignalAsync(byte action, params byte[] signals);
         void Connect();
         void Disconnect();
+        void SetLoadPort(string LoadPort);
 
         event Action<PioSignalItem>? SignalReceived;
         event Action SignalEnd;

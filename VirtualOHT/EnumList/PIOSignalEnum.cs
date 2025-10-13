@@ -23,6 +23,7 @@ namespace VirtualOHT.EnumList
         {
             Load = 0b0000_0001,
             UnLoad = 0b0000_0010,
+            Connect = 0b0000_0011
         }
     }
 }

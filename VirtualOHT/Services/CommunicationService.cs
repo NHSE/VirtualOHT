@@ -27,6 +27,7 @@ namespace VirtualOHT.Services
 
         private List<int> _slots = new();
         private PioSignalItem signal = new();
+        private byte LoadPort = 0x01;
 
         public event Action<PioSignalItem>? SignalReceived;
         public event Action SignalEnd;
@@ -49,6 +50,8 @@ namespace VirtualOHT.Services
                     IsConnected = true;
                     _logManager.WriteLog("State", "TCP/IP Connected!!!");
                     ClientChange?.Invoke();
+
+                    Task.Run(() => SendConnectSignalAsync());
 
                     _cts = new CancellationTokenSource();
                     Task.Run(() => ReceiveLoop(_cts.Token));
@@ -80,7 +83,11 @@ namespace VirtualOHT.Services
             if (_stream == null) return;
             await Task.Delay(200);
 
-            signal.CS_0 = true;
+            if (LoadPort == 0x01)
+                signal.CS_0 = true;
+            else
+                signal.CS_1 = true;
+
             SignalReceived?.Invoke(signal);
 
             signal.VALID = true;
@@ -88,6 +95,11 @@ namespace VirtualOHT.Services
             var data = new List<byte> { action };
             data.AddRange(signals);
             await _stream.WriteAsync(data.ToArray(), 0, data.Count);
+        }
+
+        public async Task SendConnectSignalAsync()
+        {
+            await _stream.WriteAsync(new byte[] {(byte)TransferAction.Connect}, 0, 1);
         }
 
         private async Task ReceiveLoop(CancellationToken token)
@@ -105,6 +117,30 @@ namespace VirtualOHT.Services
                     if (n == 0) continue;
 
                     byte action = buffer[0];
+
+                    if (action == 0)
+                    {
+                        BUSY = false;
+                        TR_REQ = false;
+                        VALID = false;
+                        COMPT = false;
+
+                        signal.READY = false;
+
+                        signal.VALID = false;
+                        signal.COMPT = false;
+
+                        if (LoadPort == 0x01)
+                            signal.CS_0 = false;
+                        else
+                            signal.CS_1 = false;
+
+
+                        SignalEnd?.Invoke();
+
+                        continue;
+                    }
+
                     byte received = buffer[1];
 
                     // READY 처리
@@ -120,7 +156,7 @@ namespace VirtualOHT.Services
 
                         var response = new List<byte>
                     {
-                        (byte)PioSignal.BUSY, 0x01 // LP
+                        (byte)PioSignal.BUSY, LoadPort // LP
                     };
                         foreach (var wafer in _slots)
                             response.Add((byte)wafer);
@@ -173,7 +209,12 @@ namespace VirtualOHT.Services
 
                         signal.VALID = false;
                         signal.COMPT = false;
-                        signal.CS_0 = false;
+
+                        if (LoadPort == 0x01)
+                            signal.CS_0 = false;
+                        else
+                            signal.CS_1 = false;
+
                         _logManager.LogEquipToHost("READY");
                     }
 
@@ -193,6 +234,18 @@ namespace VirtualOHT.Services
                 _logManager.WriteLog("State", "TCP/IP Connect Failed!!!");
                 IsConnected = false;
                 ClientChange?.Invoke();
+            }
+        }
+
+        public void SetLoadPort(string loadPort)
+        {
+            if(loadPort == "LoadPort 1")
+            {
+                LoadPort = 0x01;
+            }
+            else
+            {
+                LoadPort = 0x02;
             }
         }
     }

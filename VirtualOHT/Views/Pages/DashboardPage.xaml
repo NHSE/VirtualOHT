@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:VirtualOHT.Views.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    Title="DashboardPage"
+    Title="Virtual OHT"
     d:DesignHeight="450"
     d:DesignWidth="800"
     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -35,8 +35,9 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel VerticalAlignment="Center">
+                    <ComboBox ItemsSource="{Binding ViewModel.LoadPort}" SelectedItem="{Binding ViewModel.SelectedLoadPort}" IsEnabled="{Binding ViewModel.IsComboBox}"/>
                     <Canvas x:Name="mainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" />
-                    <Image Source="/Resources/LoadPort.png" Stretch="Uniform" Margin="0 0 30 0"/>
+                    <Image Source="/Resources/LoadPort.png" Stretch="Uniform" Margin="0 0 0 0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1"
@@ -79,13 +80,7 @@
 
                 <!-- 로그 + 통신 영역 -->
                 <StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,12">
-                        <ui:TextBlock Text="System Log"
-                                      FontSize="16"
-                                      FontWeight="SemiBold"
-                                      VerticalAlignment="Center"
-                                      Width="200"
-                                      Margin="0,0,16,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,12">
 
                         <!-- 통신 상태 -->
                         <!-- 연결 상태 Indicator -->
@@ -94,6 +89,7 @@
                              Margin="5"
                              Fill="Gray"
                              Stroke="Black"
+                             HorizontalAlignment="Right"
                              StrokeThickness="1"/>
 
                         <!-- 버튼들 -->
@@ -101,24 +97,27 @@
                             <ui:Button x:Name="btnConnect"
                                        Content="Connect"
                                        Command="{Binding ViewModel.ConnectCommand}"
+                                       IsEnabled="{Binding ViewModel.IsConnectEnabled}"
                                        Width="100" Height="32"
                                        Margin="0,0,8,0"/>
                             <ui:Button x:Name="btnDisconnect"
                                        Content="Disconnect"
                                        Command="{Binding ViewModel.DisconnectCommand}"
+                                       IsEnabled="{Binding ViewModel.IsDisConnectEnabled}"
                                        Width="100" Height="32"/>
                         </StackPanel>
                     </StackPanel>
 
                     <Canvas x:Name="signalCanvas" Background="#1E1E1E" Height="200"/>
 
-                    <TextBox Height="230"
+                    <TextBox x:Name="tblog"
+                             Height="320"
                              VerticalScrollBarVisibility="Auto"
                              IsReadOnly="True"
                              TextWrapping="Wrap"
                              HorizontalScrollBarVisibility="Auto"
                              Focusable="False"
-                             Text="{Binding ViewModel.LogText}" 
+                             Text="{Binding ViewModel.LogText, UpdateSourceTrigger=PropertyChanged}" 
                              AcceptsReturn="True"/>
                 </StackPanel>
 
@@ -129,13 +128,13 @@
                     <ui:Button x:Name="btnLoad"
                                Content="Load"
                                Command="{Binding ViewModel.LoadCommand}"
-                               IsEnabled="{Binding ViewModel.}"
+                               IsEnabled="{Binding ViewModel.IsLoadEnabled}"
                                Width="120" Height="40"
                                Margin="0,0,12,0"/>
                     <ui:Button x:Name="btnUnLoad"
                                Content="UnLoad"
                                Command="{Binding ViewModel.UnLoadCommand}"
-                               IsEnabled="{Binding ViewModel.}"
+                               IsEnabled="{Binding ViewModel.IsUnLoadEnabled}"
                                Width="120" Height="40"/>
                 </StackPanel>
             </Grid>

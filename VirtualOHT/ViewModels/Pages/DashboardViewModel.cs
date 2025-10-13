@@ -41,6 +41,12 @@ namespace VirtualOHT.ViewModels.Pages
         private bool _isCancelEnabled = false;
 
         [ObservableProperty]
+        private bool _isLoadEnabled = true;
+
+        [ObservableProperty]
+        private bool _isUnLoadEnabled = true;
+
+        [ObservableProperty]
         private string? _lPState = "Ready";
 
         [ObservableProperty]
@@ -58,6 +64,15 @@ namespace VirtualOHT.ViewModels.Pages
         [ObservableProperty]
         private bool _isConnected = false;
 
+        [ObservableProperty]
+        private bool _isComboBox = true;
+
+        [ObservableProperty]
+        private string[] _loadPort = new string[] {"LoadPort 1", "LoadPort 2" };
+
+        [ObservableProperty]
+        private string _selectedLoadPort = "LoadPort 1";
+
         [RelayCommand]
         private void Cancel()
         {
@@ -65,8 +80,18 @@ namespace VirtualOHT.ViewModels.Pages
             IsSetupEnabled = true;
         }
 
-        public ICommand ConnectCommand => new RelayCommand(() => _commManager.Connect());
-        public ICommand DisconnectCommand => new RelayCommand(() => _commManager.Disconnect());
+        public ICommand ConnectCommand => new RelayCommand(() =>
+        {
+            IsDisConnectEnabled = true;
+            IsConnectEnabled = false;
+            _commManager.Connect();
+        });
+        public ICommand DisconnectCommand => new RelayCommand(() =>
+        {
+            IsDisConnectEnabled = false;
+            IsConnectEnabled = true;
+            _commManager.Disconnect();
+        });
 
         public ICommand LoadCommand => new RelayCommand(() =>
         {
@@ -74,21 +99,31 @@ namespace VirtualOHT.ViewModels.Pages
             {
                 if(SelectedSlots.Count() == 0)
                 {
-                    Console.WriteLine("X");
+                    this._logManager.WriteLog("Error", "Not Wafer");
                     return;
                 }
 
-                IsRunning = true;
+                Start_State_Property();
+
                 this._commManager.SendSignalAsync((byte)TransferAction.Load, (byte)PioSignal.VALID);
-    }
+            }
+            else
+            {
+                this._logManager.WriteLog("Error", "Not connected");
+            }
         });
 
         public ICommand UnLoadCommand => new RelayCommand(() =>
         {
             if (IsConnected)
             {
-                IsRunning = true;
+                Start_State_Property();
+
                 this._commManager.SendSignalAsync((byte)TransferAction.UnLoad, (byte)PioSignal.VALID);
+            }
+            else
+            {
+                this._logManager.WriteLog("Error", "Not connected");
             }
         });
 
@@ -114,44 +149,62 @@ namespace VirtualOHT.ViewModels.Pages
             this.IsConnected = this._commManager.IsConnected;
         }
 
+        private void Start_State_Property()
+        {
+            IsRunning = true;
+            IsLoadEnabled = false;
+            IsUnLoadEnabled = false;
+            IsCancelEnabled = false;
+            IsComboBox = false;
+            IsDisConnectEnabled = false;
+            IsConnectEnabled = false;
+        }
+
+        private void End_State_Property()
+        {
+            IsLoadEnabled = true;
+            IsUnLoadEnabled = true;
+            IsCancelEnabled = true;
+            IsComboBox = true;
+            IsRunning = false;
+            IsDisConnectEnabled = true;
+            IsConnectEnabled = false;
+        }
+
         private void SignalEnd()
         {
-            IsRunning = false;
+            End_State_Property();
         }
 
         private void OnSignalReceived(PioSignalItem signal)
         {
-            // UI 스레드에서 신호 상태만 갱신
-            App.Current.Dispatcher.Invoke(() =>
+            for (int s = 0; s < 11; s++)
             {
-                for (int s = 0; s < 11; s++)
+                bool val = s switch
                 {
-                    bool val = s switch
-                    {
-                        0 => signal._l_REQ,
-                        1 => signal._rEADY,
-                        2 => signal._cS_0,
-                        3 => signal._cS_1,
-                        4 => signal._vALID,
-                        5 => signal._tR_REQ,
-                        6 => signal._bUSY,
-                        7 => signal._cOMPT,
-                        8 => signal._cONT,
-                        9 => signal._hO_AVBL,
-                        10 => signal._eS,
-                        _ => false
-                    };
+                    0 => signal._l_REQ,
+                    1 => signal._rEADY,
+                    2 => signal._cS_0,
+                    3 => signal._cS_1,
+                    4 => signal._vALID,
+                    5 => signal._tR_REQ,
+                    6 => signal._bUSY,
+                    7 => signal._cOMPT,
+                    8 => signal._cONT,
+                    9 => signal._hO_AVBL,
+                    10 => signal._eS,
+                    _ => false
+                };
 
-                    if (!histories.ContainsKey(s))
-                        histories[s] = new SignalHistory();
+                if (!histories.ContainsKey(s))
+                    histories[s] = new SignalHistory();
 
-                    var h = histories[s];
-                    if (val && !h.CurrentState)
-                        h.EventTriggered = true;
+                var h = histories[s];
+                if (val && !h.CurrentState)
+                    h.EventTriggered = true;
 
-                    h.CurrentState = val;
-                }
-            });
+                h.CurrentState = val;
+            }
         }
 
         public void TickSignals()
@@ -186,6 +239,11 @@ namespace VirtualOHT.ViewModels.Pages
             Signals.Add(newItem);
             if (Signals.Count > MaxSamples)
                 Signals.RemoveAt(0);
+        }
+
+        partial void OnSelectedLoadPortChanged(string value)
+        {
+            this._commManager.SetLoadPort(value);
         }
 
         partial void OnSelectedSlotsChanged(List<int> value)
