@@ -21,9 +21,10 @@ namespace VirtualOHT.Views.Pages
         private Brush[] signalColors = new Brush[]
         {
             Brushes.LimeGreen, // L_REQ
+            Brushes.LimeGreen, // U_REQ
             Brushes.Cyan,      // READY
             Brushes.Orange,    // CS_0
-            Brushes.Magenta,   // CS_1
+            Brushes.Orange,   // CS_1
             Brushes.Yellow,    // VALID
             Brushes.Red,       // TR_REQ
             Brushes.LightGreen,// BUSY
@@ -151,7 +152,7 @@ namespace VirtualOHT.Views.Pages
 
         private readonly string[] signalNames = new string[]
         {
-            "L_REQ", "READY", "CS_0", "CS_1", "VALID",
+            "L_REQ", "U_REQ", "READY", "CS_0", "CS_1", "VALID",
             "TR_REQ", "BUSY", "COMPT", "CONT", "HO_AVBL", "ES"
         };
 
@@ -200,17 +201,18 @@ namespace VirtualOHT.Views.Pages
                 {
                     bool val = s switch
                     {
-                        0 => ViewModel.Signals[i]._l_REQ,
-                        1 => ViewModel.Signals[i]._rEADY,
-                        2 => ViewModel.Signals[i]._cS_0,
-                        3 => ViewModel.Signals[i]._cS_1,
-                        4 => ViewModel.Signals[i]._vALID,
-                        5 => ViewModel.Signals[i]._tR_REQ,
-                        6 => ViewModel.Signals[i]._bUSY,
-                        7 => ViewModel.Signals[i]._cOMPT,
-                        8 => ViewModel.Signals[i]._cONT,
-                        9 => ViewModel.Signals[i]._hO_AVBL,
-                        10 => ViewModel.Signals[i]._eS,
+                        0 => ViewModel.Signals[i].L_REQ,
+                        1 => ViewModel.Signals[i].U_REQ,
+                        2 => ViewModel.Signals[i].READY,
+                        3 => ViewModel.Signals[i].CS_0,
+                        4 => ViewModel.Signals[i].CS_1,
+                        5 => ViewModel.Signals[i].VALID,
+                        6 => ViewModel.Signals[i].TR_REQ,
+                        7 => ViewModel.Signals[i].BUSY,
+                        8 => ViewModel.Signals[i].COMPT,
+                        9 => ViewModel.Signals[i].CONT,
+                        10 => ViewModel.Signals[i].HO_AVBL,
+                        11 => ViewModel.Signals[i].ES,
                         _ => false
                     };
 

@@ -165,26 +165,44 @@ namespace VirtualOHT.Services
                         await SendSignalAsync(action, response.ToArray());
                     }
 
-                    else if (received == (byte)PioSignal.L_REQ && !BUSY)
+                    else if (received == (byte)PioSignal.REQ && !BUSY)
                     {
                         await Task.Delay(200); // 샘플링 딜레이
-                        signal.L_REQ = true;
+                        if(action == (byte)TransferAction.Load)
+                            signal.L_REQ = true;
+                        else
+                            signal.U_REQ = true;
+
                         SignalReceived?.Invoke(signal);
                         await Task.Delay(200); // 샘플링 딜레이
 
                         TR_REQ = true;
                         signal.TR_REQ = true;
-                        _logManager.LogEquipToHost("L_REQ");
+
+                        if (action == (byte)TransferAction.Load)
+                            _logManager.LogEquipToHost("L_REQ");
+                        else
+                            _logManager.LogEquipToHost("U_REQ");
 
                         await SendSignalAsync(action, (byte)PioSignal.READY);
                         _logManager.LogHostToEquip("READY");
                     }
                     // L_REQ 처리 (BUSY ON → COMPT)
-                    else if (received == (byte)PioSignal.L_REQ && BUSY)
+                    else if (received == (byte)PioSignal.REQ && BUSY)
                     {
-                        signal.L_REQ = false;
+                        if (action == (byte)TransferAction.Load)
+                            signal.L_REQ = false;
+                        else
+                            signal.U_REQ = false;
+
                         SignalReceived?.Invoke(signal);
                         await Task.Delay(200); // 샘플링 딜레이
+
+                        if (action == (byte)TransferAction.Load)
+                            _logManager.LogEquipToHost("L_REQ");
+                        else
+                            _logManager.LogEquipToHost("U_REQ");
+
 
                         BUSY = false;
                         TR_REQ = false;
@@ -192,7 +210,6 @@ namespace VirtualOHT.Services
                         signal.BUSY = false;
                         signal.TR_REQ = false;
                         signal.COMPT = true;
-                        _logManager.LogEquipToHost("L_REQ");
 
                         await SendSignalAsync(action, (byte)PioSignal.COMPT);
                         _logManager.LogHostToEquip("COMPT");

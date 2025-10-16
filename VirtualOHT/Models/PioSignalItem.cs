@@ -12,6 +12,9 @@ namespace VirtualOHT.Models
         public bool _l_REQ = false;
 
         [ObservableProperty]
+        public bool _u_REQ = false;
+
+        [ObservableProperty]
         public bool _rEADY = false;
 
         [ObservableProperty]

@@ -93,7 +93,8 @@ namespace VirtualOHT.ViewModels.Pages
             _commManager.Disconnect();
         });
 
-        public ICommand LoadCommand => new RelayCommand(() =>
+        [RelayCommand]
+        private void Load()
         {
             if (IsConnected)
             {
@@ -111,9 +112,10 @@ namespace VirtualOHT.ViewModels.Pages
             {
                 this._logManager.WriteLog("Error", "Not connected");
             }
-        });
+        }
 
-        public ICommand UnLoadCommand => new RelayCommand(() =>
+        [RelayCommand]
+        private void UnLoad()
         {
             if (IsConnected)
             {
@@ -125,7 +127,7 @@ namespace VirtualOHT.ViewModels.Pages
             {
                 this._logManager.WriteLog("Error", "Not connected");
             }
-        });
+        }
 
         public DashboardViewModel(ICommManager commManager, ILogManager logManager)
         {
@@ -182,17 +184,18 @@ namespace VirtualOHT.ViewModels.Pages
             {
                 bool val = s switch
                 {
-                    0 => signal._l_REQ,
-                    1 => signal._rEADY,
-                    2 => signal._cS_0,
-                    3 => signal._cS_1,
-                    4 => signal._vALID,
-                    5 => signal._tR_REQ,
-                    6 => signal._bUSY,
-                    7 => signal._cOMPT,
-                    8 => signal._cONT,
-                    9 => signal._hO_AVBL,
-                    10 => signal._eS,
+                    0 => signal.L_REQ,
+                    1 => signal.U_REQ,
+                    2 => signal.READY,
+                    3 => signal.CS_0,
+                    4 => signal.CS_1,
+                    5 => signal.VALID,
+                    6 => signal.TR_REQ,
+                    7 => signal.BUSY,
+                    8 => signal.COMPT,
+                    9 => signal.CONT,
+                    10 => signal.HO_AVBL,
+                    11 => signal.ES,
                     _ => false
                 };
 
@@ -220,17 +223,18 @@ namespace VirtualOHT.ViewModels.Pages
                 // 단순히 상태 기록
                 switch (s)
                 {
-                    case 0: newItem._l_REQ = val; break;
-                    case 1: newItem._rEADY = val; break;
-                    case 2: newItem._cS_0 = val; break;
-                    case 3: newItem._cS_1 = val; break;
-                    case 4: newItem._vALID = val; break;
-                    case 5: newItem._tR_REQ = val; break;
-                    case 6: newItem._bUSY = val; break;
-                    case 7: newItem._cOMPT = val; break;
-                    case 8: newItem._cONT = val; break;
-                    case 9: newItem._hO_AVBL = val; break;
-                    case 10: newItem._eS = val; break;
+                    case 0: newItem.L_REQ = val; break;
+                    case 1: newItem.U_REQ = val; break;
+                    case 2: newItem.READY = val; break;
+                    case 3: newItem.CS_0 = val; break;
+                    case 4: newItem.CS_1 = val; break;
+                    case 5: newItem.VALID = val; break;
+                    case 6: newItem.TR_REQ = val; break;
+                    case 7: newItem.BUSY = val; break;
+                    case 8: newItem.COMPT = val; break;
+                    case 9: newItem.CONT = val; break;
+                    case 10: newItem.HO_AVBL = val; break;
+                    case 11: newItem.ES = val; break;
                 }
 
                 h.EventTriggered = false;
