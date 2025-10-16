@@ -34,19 +34,3 @@
 </p>
 
 ---
-
-### ⚡ **PIO (Parallel I/O) Signal Definition**
-
-| **Signal** | **Direction** | **Description** |
-|:-------------:|:----------------:|:-------------------|
-| **L_REQ** | P → A | LP 내부 Carrier 이동 가능 여부 |
-| **READY** | P → A | Host가 장비의 Carrier Load / Unload 요청을 수락했음을 알림 |
-| **CS_0** | A → P | Carrier Sensor #0 — LP1에서 Carrier 이송 가능 신호 |
-| **CS_1** | A → P | Carrier Sensor #1 — LP2에서 Carrier 이송 가능 신호 |
-| **VALID** | A → P | Carrier 이송 가능 상태 신호 |
-| **TR_REQ** | A → P | Carrier 이송 준비 완료 신호 |
-| **BUSY** | A → P | Carrier 이송 중임을 나타내는 신호 |
-| **COMPT** | A → P | Carrier 이송 완료 신호 |
-| **CONT** | A → P | - |
-| **HO_AVBL** | P → A | - |
-| **ES** | P → A | 이상(Error) 발생 신호 |
